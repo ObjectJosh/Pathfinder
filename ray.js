@@ -3,18 +3,16 @@ class Ray {
     this.pos = pos;
     this.dir = p5.Vector.fromAngle(angle);
   }
-
-  lookAt(x, y) {
-    this.dir.x = x - this.pos.x;
-    this.dir.y = y - this.pos.y;
-    this.dir.normalize();
+  
+  setAngle(angle){
+    this.dir = p5.Vector.fromAngle(angle);
   }
 
   show() {
     stroke(255);
     push();
     translate(this.pos.x, this.pos.y);
-    line(0, 0, this.dir.x * 10, this.dir.y * 10);
+    line(0, 0, this.dir.x, this.dir.y);
     pop();
   }
 
